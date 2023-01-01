@@ -89,12 +89,12 @@ if __name__ == "__main__":
                     inpath = input("Enter Path (with Directory Name) >> ")
                     with open(fpath, "w") as f:
                         f.write(inpath)
-                    print(f"Successfully Set Path to: {inpath}")
+                    print("Successfully Set Path to: {}".format(inpath))
                 elif choice == "2":
                     autopath = "/home/hackingtool/"
                     with open(fpath, "w") as f:
                         f.write(autopath)
-                    print(f"Your Default Path Is: {autopath}")
+                    print("Your Default Path Is: {}".format(autopath))
                     sleep(3)
                 else:
                     print("Try Again..!!")
@@ -105,13 +105,13 @@ if __name__ == "__main__":
                 if not os.path.exists(archive):
                     os.mkdir(archive)
                 os.chdir(archive)
-                all_tools = AllTools()
-                all_tools.show_options()
+                AllTools().show_options()
 
         # If not Linux and probably Windows
         elif system() == "Windows":
             print(
-                "\033[91m Please Run This Tool On A Debian System For Best Results " "\e[00m")
+                r"\033[91m Please Run This Tool On A Debian System For Best Results\e[00m"
+            )
             sleep(2)
             webbrowser.open_new_tab("https://tinyurl.com/y522modc")
 
